@@ -8,7 +8,7 @@ import { useParams, useHistory } from 'react-router-dom';
 import api from '../../services/api';
 
 export default function Filme() {
-  const { id, nome } = useParams();
+  const { id } = useParams();
   const history = useHistory();
 
   const [filme, setFilme] = useState([]);
@@ -52,6 +52,20 @@ export default function Filme() {
     // Método some(), do Java Script e percorre minha lista e verifica a condição, e devolve um TRUE se encontrar algo e FALSE se não encontrar
     // o filme.id é do hook useState
     const hasFilm = filmesSalvos.some((filmeSalvo) => filmeSalvo.id === filme.id)
+
+    if(hasFilm) {
+      alert('Você já possui esse filme salvo ...');
+      return;
+      //Com o return sem nada ele para aexecução do código aqui ...
+    }
+
+    // Coloco o filme no array de filmes salvos
+    filmesSalvos.push(filme)
+    // Salvo no localStorage
+    localStorage.setItem('filmes', JSON.stringify(filmesSalvos));
+    alert('Filme Salvo com Sucesso ...');
+
+
     
     console.log(filmesSalvos)
   }
