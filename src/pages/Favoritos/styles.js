@@ -29,6 +29,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
 
     a {
       text-decoration: none;
@@ -37,6 +38,22 @@ export const Container = styled.div`
 
     button {
       margin-left: .75rem;
+      cursor: pointer;
+      text-decoration: none;
+      background-color: #FFF;
+      border: 1px solid brown;
+      border-radius: 5px;
+      padding: 5px;
+      font-weight: bold;
+      color: brown;
+      padding: .5rem;
+      margin: 1rem;
+      transition: all .5s;
+
+      &:hover {
+        color: #FFF;
+        background-color: brown;
+      }
     }
   }
 

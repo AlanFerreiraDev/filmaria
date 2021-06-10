@@ -6,8 +6,8 @@ export const  Head = styled.header`
  justify-content: space-around;
  align-items: center;
  width: 100%;
- height: 60px;
- background-color: brown;
+ height: ${props => `${props.altura}px`};
+ background-color: ${props => `${props.cor}`};
 
  .home__film {
    text-decoration: none;
@@ -23,7 +23,7 @@ export const  Head = styled.header`
   border-radius: 5px;
   padding: 5px;
   font-weight: bold;
-  color: #000;
+  color: brown;
   padding: .5rem;
  }
 
