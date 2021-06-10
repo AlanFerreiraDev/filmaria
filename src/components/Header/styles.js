@@ -24,7 +24,7 @@ export const  Head = styled.header`
   padding: 5px;
   font-weight: bold;
   color: #000;
+  padding: .5rem;
  }
-
 
 `;

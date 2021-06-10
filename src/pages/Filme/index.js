@@ -5,6 +5,8 @@ import { Loading, LoadH1, Button, Buttons } from './styles';
 //* Para acessar o parametro de ID que eu passei na rota
 import { useParams, useHistory } from 'react-router-dom';
 
+import { toast } from 'react-toastify';
+
 import api from '../../services/api';
 
 export default function Filme() {
@@ -54,19 +56,19 @@ export default function Filme() {
     const hasFilm = filmesSalvos.some((filmeSalvo) => filmeSalvo.id === filme.id)
 
     if(hasFilm) {
-      alert('Você já possui esse filme salvo ...');
+      toast.info('Você já possui esse Filme Salvo ...');
+      // alert('Você já possui esse filme salvo ...');
       return;
-      //Com o return sem nada ele para aexecução do código aqui ...
+      //Com o return sem nada ele para a execução do código aqui ...
     }
 
     // Coloco o filme no array de filmes salvos
     filmesSalvos.push(filme)
     // Salvo no localStorage
     localStorage.setItem('filmes', JSON.stringify(filmesSalvos));
-    alert('Filme Salvo com Sucesso ...');
+    // alert('Filme Salvo com Sucesso ...');
+    toast.success('Filme salvo com Sucesso ...');
 
-
-    
     console.log(filmesSalvos)
   }
 
